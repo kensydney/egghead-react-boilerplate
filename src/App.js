@@ -14,9 +14,9 @@ class App extends React.Component {
       <div>
         <h1>Hello World</h1>
         <img src="./logo.png" alt="logo img" />
-        <h2 className={count > 10 ? 'warning' : null}>
+        <h3 className={count > 10 ? 'warning' : null}>
           Count: {this.state.count}
-        </h2>
+        </h3>
         <button
           onClick={() => this.setState(state => ({ count: state.count + 1 }))}
         >
