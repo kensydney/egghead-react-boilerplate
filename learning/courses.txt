@@ -1,0 +1,7 @@
+https://egghead.io/lessons/angular-define-and-configure-a-route-with-the-angular-router
+https://egghead.io/lessons/javascript-introduction-to-algorithms-in-javascript
+https://egghead.io/courses/css-selectors-in-depth
+https://egghead.io/lessons/webpack-course-overview-modern-javascript-tooling-with-react
+https://courses.nativescripting.com/courses/169856/lectures/6887518
+https://app.pluralsight.com/library/courses/angular-services/table-of-contents
+https://app.pluralsight.com/library/courses/typescript-advanced/table-of-contents

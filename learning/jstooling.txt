@@ -1,0 +1,8 @@
+---run webpack with params
+npm run build -- --mode development
+
+---run babel from module folder
+$(npm bin)/babel ./src/greet.js --presets=@babel/preset-env
+
+---list browsers need to support
+npx browserslist "last 2 versions, not dead, not < 2%"

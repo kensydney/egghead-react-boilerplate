@@ -1,0 +1,22 @@
+git diff(git diff --cached)
+git diff dev master
+git rm somefile(git rm somefile --cached)
+git add somefile(not exist) == delete file in index
+git mv somefile newfile(rename in both working area and index area)
+git stash --include-untracked
+git checkout HEAD somefile
+git log --graph --decorate --oneline
+git show somehash(or branch name for HEAD commit)
+git show HEAD^(^^)
+git show HEAD~2(^2)
+git blame somefile
+git diff HEAD HEAD~2
+git log --grep apples --oneline
+git reflog
+git revert somehash
+git log -p --after="2 weeks ago" src/app/hub/projects/my-projects/my-projects.component.ts
+git log -p -S"searching"
+git log -i -p -Gsearching\|rand
+git log --no-merges
+git diff --stat
+git log origin/develop..

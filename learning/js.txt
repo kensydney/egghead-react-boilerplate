@@ -1,0 +1,103 @@
+pure function: map, concat, [...list, 0], splice, filter
+impure function: push, slice, forEach
+store.subscribe(() => this.forceUpdate())
+pass connect()(component) when no need for store but need dispatch
+
+---using recursion avoid multiple foreach
+  if(Array.isArray(a)) { hasSix = findSix(a) }
+
+  function sum(arr){
+    if(arr.length === 0) return 0
+    return arr[0] + sum(arr.slice(1))
+  }
+
+  function quickSort(array) {
+    if(array.length < 2) return array
+    let pivotIndex = Math.floor(array.length / 2)
+    let pivot = array[pivotIndex]
+    let less = []
+    let greater = []
+    for(let i in array) {
+      if(i != pivotIndex) {
+        array[i] > pivot ? greater.push(array[i]):less.push(array[i])
+      
+    }
+    return [
+      ...quickSort(less),
+      pivot,
+      ...quickSort(greater)]
+  }
+
+  *** using binary search instead of linear search
+  **  linear search
+  const items = [1, 5, 2, 7, 3, 12, 6, 10]
+  function search(list, item) {
+    let hasItem = null
+    let counter = 0
+
+    for(let e of list) {
+      counter++
+      if(e === item) {
+        hasItem = true
+        break
+      }
+    }
+    console.log(counter)a
+    return hasItem
+  }
+  **  binary search
+  const items = [1, 5, 2, 7, 3, 12, 6, 10]
+  items.sort((a, b) => a -b)
+  
+  function search(list, item){
+    let low = 0
+    let high = list.length
+    let counter = 0
+    
+    while(low <= high) {
+      counter++
+      let mid = Math.floor((low + high) / 2)
+      let guess = list[mid]
+      if(guess === item) return true
+      if(guess > item) high = mid - 1
+      else low = mid + 1
+    }
+    console.log(counter)
+    return null
+  }
+
+--- breadth first search 
+// tylen -> henry, john, aimee
+// henry -> peggy, keli
+// john -> keli
+// aimee -> ...
+
+// peggy -> ...
+// keli -> claine
+
+const graph = {}
+graph.tyler = [{id: 'henry', dog: flase}, {id: 'john', dog: false}, {id: 'aimee', dog: false}]
+graph.henry = [{id: 'peggy', dog: false}, {id: 'keli', dog: false}]
+graph.john = [{id: 'keli', dog: false}]
+graph.aimee = []
+graph.peggy = []
+graph.keli = [{id: 'claire', dog: true}]
+graph.claire = []
+
+function search(name) {
+  let searchQueue = [].concat(graph[name])
+  let searched = []
+  while (searchQueue.length) {
+    let person  searchQueue.shift()
+    if(!searched.find(n => n.id === person.id)) {
+      if (person.dog) return `${person.id} has a dog`
+      else {
+        searchQueue = searchQueue.concat(graph[person.id])
+        searched.push(person)
+      }
+    }
+  }
+  return "There are no friends that have a dog"
+}
+
+console.log(search('tyler'))

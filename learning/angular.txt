@@ -1,0 +1,74 @@
+--- passing route data to service ,avoid subscribe twice
+this.activatedRoute.params.subscribe(params => {
+    const personid = params['personId'];
+    this.peopleService.getPersonById(+personid).subscribe(person => {
+         this.person = person;
+    })
+})   becomes
+
+this.activatedRoute.params.pipe(switchMap(params => this.peopleService.getPersonById(+params['personId']))).subscribe(person => {
+this.person = person;
+})
+
+--- pass static data to a compoent as part of route
+const routes = [
+{
+  path: 'peo;e/:personId',
+  component: PersonDetailComponent,
+  data: {loadAddress: {name: adsfsad}},
+  resolve: { person: PersonDataResolver }
+}]
+
+--- preserve current route's query params when navigating 
+@Component({
+  selector: 'app-people-list',
+  template: `
+    <ul>
+      <li *ngFor="let person of people | async">
+        <a [routerLink]="[person.id]" [queryParams]="activedRoute.queryParams | async">{{person.name}} </a>
+      </li>
+    </ul>`
+
+(in component file)
+  onSave(personName) {
+    this.peopleService.save(this.person).subscribe(() => {
+      this.router.navigate(['../'], {
+        relativeTo: this.activatedRoute,
+        perserveQueryParams: true
+      });
+  })
+}
+
+--- preload all lazy modules
+(in route file)
+@NgModule({
+  imports: [RouteModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+--- custom pre load modules
+export class CustomRoutePreloader implements PreloadingStrategy {
+  preload(route: Route, load: Function): Observable<any> {
+    if (route.data && route.data['preload']) {
+      return load();
+    } else {
+      return of(null);
+    }
+  }
+}
+(in route module file)
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: CustomRouterPreloader
+    })
+  ],
+  exports: [RouterModule]
+  provider: [CustomRouterPreloader]
+})
+
+--- canActivateChild
+--- canLoad

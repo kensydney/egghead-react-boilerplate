@@ -1,0 +1,39 @@
+file filename
+open filename(img)
+file *
+cp -R source_dir target_dir
+wildcard ? match exact 1 character
+wildcard [abca] match a, b or c
+touch {a..c}{1..3}.txt
+expansion is high priority to wildcard
+cat > story.txt
+echo hello >> story.txt
+cut -f 3 somefile | grep 4 | wc -l
+ctrl r (search command history) using left arrow can edit the searched command
+sort somefile
+sort -nrk2 somefile(sort by second column)
+sort somefile | uniq -c | sort -nr
+ls -lS |head -n 2
+ls -lrS 
+tail -n 1
+grep -i  bruce *grades 
+ls -l | grep -v "^d"
+find . -name "*.txt" -exec grep -l curious {} \;
+cat filename | tr S s
+tr S s < filename
+grep \; filename
+tr \\t \; < filename > newfilename
+advance tool: sed, awk, perl, python
+sed 's/curiouser/stranger/g' demo/filename > newfilename
+awk '{ total += $2' } END {print total/ NR}' filename
+perl -ne '$total+=(split)[1];END{print $total/$.. "\n"}' filename
+sort -nk2 -t\; filename
+cut -f 2 -d\; filename
+fg / bg
+./delayed_ls > output_file & //put run script to background
+jobs/ kill %jobno
+ps aux/ ps -ef
+top
+PATH="$PATH:~/bin"
+echo $PATH
+echo 'PATH="$PATH:~/bin"' >> ~/.bash_profile

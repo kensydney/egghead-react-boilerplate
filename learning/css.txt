@@ -1,0 +1,11 @@
+input:focus {outline: none}
+fieldset:disabled{ opacity:0.5;}
+input:checked + label {font-style: italic;}
+input:invalid {border-color: red;}
+input:valid {border-color: green;}
+input:required {border-width: 2px;}
+
+li:nth-child(2n) { background-color:red;}
+li:nth-child(2n+1) { background-color:red;}
+
+.footernav li:nth-last-child(n+2)::after {content: '|'; margin: 0 20px;}:
