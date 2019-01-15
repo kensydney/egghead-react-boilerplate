@@ -5,3 +5,4 @@ https://egghead.io/lessons/webpack-course-overview-modern-javascript-tooling-wit
 https://courses.nativescripting.com/courses/169856/lectures/6887518
 https://app.pluralsight.com/library/courses/angular-services/table-of-contents
 https://app.pluralsight.com/library/courses/typescript-advanced/table-of-contents
+https://courses.wesbos.com/account/access/5c3d190032bb6d664e011f30/view/195971844

@@ -9,3 +9,14 @@ li:nth-child(2n) { background-color:red;}
 li:nth-child(2n+1) { background-color:red;}
 
 .footernav li:nth-last-child(n+2)::after {content: '|'; margin: 0 20px;}:
+
+flex-container
+  flex-direction: row
+  flex-wrap: wrap
+  flex-flow: column wrap
+  justify-content: space-between
+  align-items: baseline
+  align-content: space-around
+flex-item
+  flex: flex-grow flex-shrink flex-basis
+  align-self: stretch
