@@ -20,3 +20,5 @@ flex-container
 flex-item
   flex: flex-grow flex-shrink flex-basis
   align-self: stretch
+
+box-sizing: border-box
