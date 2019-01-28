@@ -101,3 +101,41 @@ function search(name) {
 }
 
 console.log(search('tyler'))
+
+---array copy
+const team2 = players.slice();
+const team3 = [].concat(players);
+const team4 = [...players];
+
+ **object copy
+const dev = object.assign({}, wes); --only shallow copy
+const dev2 = JSON.parse(JSON.stringify(wes)); --deep copy
+
+
+---event delegation
+function toggleDone(e) {
+    if (!e.target.matches('input')) return; // skip this unless it's an input
+    const el = e.target;
+    const index = el.dataset.index;
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
+  itemsList.addEventListener('click', toggleDone);
+
+---event capture and run instead of bubbling and run / only run once
+divs.forEach(div => div.addEventListener('click', logText, {capture: false, once:true}))
+
+---stop event bubbling
+function logText(e) {
+  e.stopPropagation()}
+
+
+---get div size
+const dropdown = this.querySelector('.dropdown');
+const dropdownCoords = dropdown.getBoundingClientRect();
+
+---set text content
+const timerDisplay = document.querySelector('.display__time-left')
+timerDisplay.textContent = 'display'

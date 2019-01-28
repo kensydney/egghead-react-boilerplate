@@ -7,3 +7,6 @@ https://app.pluralsight.com/library/courses/angular-services/table-of-contents
 https://app.pluralsight.com/library/courses/typescript-advanced/table-of-contents
 https://courses.wesbos.com/account/access/5c3d190032bb6d664e011f30/view/195971844
 https://courses.wesbos.com/account/access/5c3d557b32bb6d664e011fa4/view/249569493
+https://courses.wesbos.com/account/access/5c3d542232bb6d664e011fa2
+https://app.pluralsight.com/player?name=2c2079db-8559-469e-b536-2364633de80f&clip=0&course=nodejs-express-web-applications-update&author=jonathan-mills
+https://app.pluralsight.com/player?course=nodejs-getting-started&author=samer-buna&name=36ef38fd-1ec3-490c-809d-bbbd9fb05b15&clip=0

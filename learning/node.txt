@@ -1,0 +1,37 @@
+NODE_DEBUG="http" node 1-hello-world.js
+VAL1=10 VAL2=20 node 1-custom-env-variables.js  or export VAL1=100
+~ means patch version
+^ means minor version -- middle
+node wraps everything in a top level hidden function - function(exports, module, require, __filename, __dirname)
+the top level hidden function return module.export
+have to re-assign module.exports if return non-object like array(module.exports = [2, 3, 4, 7])
+const { readFile } = require('fs').promises; await readFile(__filename)
+setImmediate(() => {myEmitter.emit('Test_event')})
+console.dir(req, {depth: 0})
+node --inspect-brk 4-bug.js
+node --v8-options | grep "in progress"
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -nodes
+curl -i localhost:8000
+http.STATUS_CODES
+---Types of streams
+  Readable: fs.createReadStream
+  Writable: fs.createWriteStream
+  Duplex: net.Socket
+  Transform: zlib.createGZip
+
+---ways to create a child process
+  spawn()
+  exec()
+  execFile()
+  fork()
+
+  * exec will use shell and buffer data returned , ideally for small data
+  * spawn not use shell but not buffer data good for big data, can set shell true to use shell
+  * exec a file without use shell, execFile should be used.
+  * communication channel is established when using form.
+
+eslint app.js --fix
+ab -c200 -t10 http://localhost:8080
+
+mongo: use libraryApp
+       db.books.find().pretty()

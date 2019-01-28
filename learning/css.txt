@@ -22,3 +22,7 @@ flex-item
   align-self: stretch
 
 box-sizing: border-box
+
+---offsetHeight is the nav's height
+document.body.style.paddingTop = nav.offsetHeight + 'px';
+
