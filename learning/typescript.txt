@@ -1,0 +1,31 @@
+--- tuple type
+interface KeyValuePair<K, V> extends Array<K | V> {
+    0: K;
+    1: V;
+}
+
+let catalogLocation: KeyValuePair<string, Book> = ['A 123.456', book1];
+
+--- union type
+type PrintMaterial = Book | Magazine;
+let readingMaterial: PrintMaterial = allBooks[0];
+
+--- string literal types
+type Frequency = 'monthly' | 'annually';
+
+--- type guards
+typeof param === 'number'
+lib instanceof PublicLibrarian
+
+function isBook(text: Book | Magazine): text is Book {
+    return (<Book>text).author !== undefined;
+}
+
+let readingMaterial: Book | Magazine = util.GetAllBooks()[0];
+
+if(isBook(readingMaterial)) {
+    console.log(`The book's author is ${readingMaterial.author}.`);
+}
+else {
+    console.log(`The magazine's publisher is ${readingMaterial.publisher}.`);
+}

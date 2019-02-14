@@ -72,3 +72,15 @@ export class CustomRoutePreloader implements PreloadingStrategy {
 
 --- canActivateChild
 --- canLoad
+
+--- dependency injection
+providers: [
+    // PlainLoggerService,
+    // { provide: LoggerService, useExisting: PlainLoggerService },
+    // { provide: LoggerService, useValue: {
+    //   log: (message) => console.log(`MESSAGE: ${message}`),
+    //   error: (message) => console.log(`PROBLEM: ${message}`)
+    // }},
+    // { provide: DataService, useFactory: dataServiceFactory, deps: [LoggerService] }
+    LoggerService, DataService
+  ]  
