@@ -20,3 +20,18 @@ git log -i -p -Gsearching\|rand
 git log --no-merges
 git diff --stat
 git log origin/develop..
+git remote add origin git@github.com:trevordmiller/utility-functions.git
+git remote -v
+git branch -d url-slugs
+git log(using ctrl+f to forward a page ctrl+b to backward a page / for search n for next capital n for last)
+git log --oneline --graph
+git log --author="ken.chen"
+git log -p -S"Math"(git pickaxet)
+git log -p -GMath\|Random
+git log -i --author="Janet"
+git log README.md
+git bisect good/bad
+git config --list
+git reset --hard (commit hash) can set Head to it
+git commit --fixup (commit bash)
+git commit --amend

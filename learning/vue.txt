@@ -1,0 +1,15 @@
+never using v-if and v-for in the same element for performance reason
+<style scoped> for component only style , one component can have multiple style section
+<style lang="scss">
+in css font is inherited but border is not
+targeting child element in parent element using >>> or /deep/
+:style="{border: '3px solid red'}"
+:style="headBorderStyle" headBorderStyle is function or :style="[headBorderStyle, moreStyles]"
+:class="{'sale-boder':selectedRobot.head.onSale}"
+:class="[saleBorderClass, 'top', 'part']" saleBorderClass is computed function return class string.
+vuex store state always namespaced but actions, dispatch , mutations are not , 
+...mapState({ rootFoo: 'foo', usersFoo: state => state.user.foo,})
+npm run build -- --mode=staging
+ctrl+k, ctrl+0 collapse all(ctrl+k, ctrl+j)
+webpack chain
+vue inspect --mode=production > webpack.config.js

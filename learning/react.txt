@@ -1,3 +1,56 @@
 reselect
 redux-logger
 redux-saga-tester
+JSX function call passing parameters
+  1. click = {this.switchNameHandler.bind(this, 'Max')}
+  2. click = {() => this.switchNameHandler('Max')}
+
+conditional render content
+  let person = null;
+  if (this.state.showPerson) {
+    person = (
+      <div>
+         <Person name={this.state.persons[0].name} />
+      </div>)}
+  return({person});
+
+state immutably
+  const persons = this.state.person; //bad, state mutabled
+  1.    persons = this.state.person.slice();
+  2.    persons = [...this.state.person];
+  3.    persons = state.results.filteer(result => true)
+
+  for add object to array, should use concat instead of push
+  
+  for update array
+    function updateObjectInArray(array, action) {
+    return array.map( (item, index) => {
+        if(index !== action.index) {
+            // This isn't the item we care about - keep it as-is
+            return item;
+        }
+ 
+        // Otherwise, this is the one we want - return an updated value
+        return {
+            ...item,
+            ...action.item
+        };    
+    });
+  }
+  for object
+        person = {...this.state.person[index]}
+        person = Object.assign({}, this.state.person[index]); 
+
+  try to keep state flattened, and compose reducers.
+
+withRouter can get all react-router-dom props to the component which is not wrapped by <route>
+when use <Link to=""> in react-router-dom, the url is alway absolute not matter what string you put. to get relative url, have to do `this.props.match.url` + 'url' to the string.
+Using NavLink to get active support from react-router-dom
+set up activeClassName for NavLink for customed classname
+Switch in react-router-dom only render the first match route
+
+Using <Route render={() => <h1>Not found</h1>}/> to catch 404 error, put this route in the end of route list.
+
+lazy loading -  not for server side rendering
+const Posts = React.lazy(() => import('./containers/Posts'));
+<Route path="post" render={() => { <Suspense fallback={<div>loading...</div>} <Posts /></Suspense>)}

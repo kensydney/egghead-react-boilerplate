@@ -1,0 +1,8 @@
+subtree breakpoint
+debugger in the code (conditional debugger) if(a > 10) {debugger}
+any http status code 300 , it means fine cached
+in chrome console, $0 is current element.
+in chrome console can use $(.classname) to locate element, or $$('.classname') for collection of elements.
+in chrome console can use $x('html/body/div') to locate element
+in chrome console using monitorEvents($('.classname'), 'mouseover')
+in chrome console using unmonitorEvents($('.classname')) 

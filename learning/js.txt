@@ -2,7 +2,22 @@ pure function: map, concat, [...list, 0], splice, filter
 impure function: push, slice, forEach
 store.subscribe(() => this.forceUpdate())
 pass connect()(component) when no need for store but need dispatch
-
+for in loop object property - foreach loop array
+for of is for both object and array
+let map = new Map([
+ ["A", 1],
+ ["B", 2]
+]);
+console.log(map.get("A"))
+console.log(map.has("B"))
+console.log(map.delete("A"))
+map.size
+map.clear
+for of loop over map
+for (let key of map.keys()) { console.log(key);}
+for (let entry of map.entries()) { console.log(entry[0], entry[1])};
+for (let [key, value] of map.entries()) {console.log(key, value);}
+for (let [key, value] of map) {console.log(key, value);}
 ---using recursion avoid multiple foreach
   if(Array.isArray(a)) { hasSix = findSix(a) }
 

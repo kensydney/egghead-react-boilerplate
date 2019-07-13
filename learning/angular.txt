@@ -83,4 +83,36 @@ providers: [
     // }},
     // { provide: DataService, useFactory: dataServiceFactory, deps: [LoggerService] }
     LoggerService, DataService
-  ]  
+  ] 
+
+ViewEncapsulation.Native/None 
+<ng-content select=".puchline"></ng-content>
+ngAfterViewInit for child component init
+@VIewChild(JokeComponent) jokeViewChild: JokeComponent;
+@ViewChildren(JokeComponent) jokeViewChildren: QueryList<JokeComponent>;
+@ViewChild("header") headerEl: ElementRef;
+ngAfterViewInit() {
+  console.log('jokeViewChild is ${this.jokeViewChild}')
+  let jokes: JokeComponent[] = this.jokeViewChildren.toArray();
+  console.log(jokes);
+  console.log(`headerEl is ${this.headerEL}`)
+  this.headerEl.nativeElement.textContent = "best"}
+
+[ngStyle]/[style.background-color] = "{'font-size.px' : 24}"
+[ngStyle] = "{'font-size.%' :25}"
+[style.color]="getColor(person.country)"
+<li [ngClass]="{
+  'text-success':person.country === 'UK',
+  'text-primary':person.country === 'USA',
+  'text-danger':person.country === 'HK'
+  }">
+<li [class.text-success]="person.country === 'UK'"
+      [class.text-primary]="person.country === 'USA'"
+      [class.text-danger]="person.country === 'HK'">
+    {{ person.name }} ({{ person.country }})
+  </li>
+<pre ngNonBindable>{{ name }}</pre>
+
+async pipe - combine create observable/promise, subscribe and bind it in the template into one step
+
+.catch() for promise chain
