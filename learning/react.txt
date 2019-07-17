@@ -54,3 +54,8 @@ Using <Route render={() => <h1>Not found</h1>}/> to catch 404 error, put this ro
 lazy loading -  not for server side rendering
 const Posts = React.lazy(() => import('./containers/Posts'));
 <Route path="post" render={() => { <Suspense fallback={<div>loading...</div>} <Posts /></Suspense>)}
+
+this.setState({showSideDrawer: !this.state.showSideDrawer}) is not safe way to set state as the setState is acync. it should code like this
+   this.setState( (prevState ) => {
+            return { showSideDrawer: !prevState.showSideDrawer };
+        });
